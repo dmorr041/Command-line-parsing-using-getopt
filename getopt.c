@@ -14,15 +14,15 @@
 
 int main(int argc, char **argv)
 {
-	extern char *optarg;
-	extern int optind;
+	extern char *optarg;	// Command line argument
+	extern int optind;	// Command line argument's index
 	int c, err = 0; 
-	int eflag=0, mflag=0, dflag = 0, aflag=0, sflag=0;
-	int mnum = 0, dnum = 0, anum = 0, snum = 0;
+	int eflag=0, mflag=0, dflag = 0, aflag=0, sflag=0;	// Flags for each option
+	int mnum = 0, dnum = 0, anum = 0, snum = 0;		// integer variables for the options
 	float value;
-	static char usage[] = "usage: minicalc [-a num] [-d num] [-m num] [-s num] [e] value \n";
+	static char usage[] = "usage: minicalc [-a num] [-d num] [-m num] [-s num] [e] value \n";	// Usage
 	
-	// Set the flags and num values for each case
+	/* Set the flags and num values for each case */
 	while ((c = getopt(argc, argv, "em:d:a:s:")) != -1)
 		switch (c) {
 		case 'e':
@@ -52,7 +52,7 @@ int main(int argc, char **argv)
 	// Need at least one argument (change +1 to +2 for two, etc. as needeed)
 	if ((optind+1) > argc) 
 	{
-		printf("optind = %d, argc=%d\n", optind, argc);
+		printf("optind = %d, argc = %d\n", optind, argc);
 		fprintf(stderr, "%s: missing name\n", argv[0]);
 		fprintf(stderr, usage, argv[0]);
 		exit(1);
