@@ -1,9 +1,9 @@
 /*
 	I affirm that this is my original work and not the work of anyone else.
 	
-	Darien Quinn Morrison 3380082
+	Darien Quinn Morrison
 
-	COP4338 Section
+	COP4338
 
 	Example of command line parsing via getopt
 	usage: minicalc [-a num] [-d num] [-m num] [-s num] [e] value
